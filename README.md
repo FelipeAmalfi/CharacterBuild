@@ -1,3 +1,3 @@
 # CharacterBuild
 
-App para testar o uso do jetpack compose.
+App to test jetpack compose.
