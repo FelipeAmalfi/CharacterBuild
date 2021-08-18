@@ -1,4 +1,4 @@
-package com.example.characterbuild.activities
+package com.example.characterbuild.activities.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -17,14 +17,14 @@ class TalentsViewModel: ViewModel() {
         _filterState.value =  ListState.ClearList(defaultList)
     }
 
-    fun filter(quantity: Int){
-        if(quantity == 0){
+    fun filter(quantity: Long){
+        if(quantity == 0L || quantity > _talentListState.value!!.size){
             clear()
             return
         }
 
         _filterState.value = _talentListState.value?.let{ list ->
-            ListState.FilteredList(list.shuffled().take(quantity))
+            ListState.FilteredList(list.shuffled().take(quantity.toInt()))
         }
     }
 
@@ -33,7 +33,7 @@ class TalentsViewModel: ViewModel() {
     }
 
     fun add(talent: String){
-        if(talent.isNullOrEmpty()){
+        if(talent.isEmpty()){
             return
         }
         val talentList = _talentListState.value?.toMutableList()

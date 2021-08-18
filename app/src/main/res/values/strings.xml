@@ -6,4 +6,5 @@
     <string name="talent_list_title">Lista de características</string>
     <string name="action_button_dialog_confirm">Confirmar</string>
     <string name="dialog_add_talent">Adicione uma característica</string>
+    <string name="dialog_filter_title">Quantas características você quer?</string>
 </resources>
