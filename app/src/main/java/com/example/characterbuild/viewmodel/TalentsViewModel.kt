@@ -1,9 +1,9 @@
-package com.example.characterbuild.activities.viewmodel
+package com.example.characterbuild.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.characterbuild.activities.viewstate.ListState
+import com.example.characterbuild.viewstate.ListState
 
 class TalentsViewModel: ViewModel() {
 
@@ -33,14 +33,17 @@ class TalentsViewModel: ViewModel() {
     }
 
     fun add(talent: String){
+        val talentList = _talentListState.value?.toMutableList()
+
         if(talent.isEmpty()){
             return
         }
-        val talentList = _talentListState.value?.toMutableList()
+
         talentList?.let { list ->
             list.add(talent)
             _talentListState.value = list
         }
+
         clear()
     }
 

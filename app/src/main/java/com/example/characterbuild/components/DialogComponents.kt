@@ -1,6 +1,5 @@
-package com.example.characterbuild.activities.components
+package com.example.characterbuild.components
 
-import android.graphics.drawable.Icon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.absolutePadding
@@ -13,8 +12,6 @@ import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.FilterAlt
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -24,23 +21,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.unit.ExperimentalUnitApi
-import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.TextUnitType
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.*
 import androidx.compose.ui.window.Dialog
 import com.example.characterbuild.R
 import com.example.characterbuild.ui.theme.DarkGrayCustom
 import com.example.characterbuild.ui.theme.GreenConfirm
 import com.example.characterbuild.ui.theme.Indigo
 
-@OptIn(ExperimentalUnitApi::class)
 @Composable
 fun ConfirmInputDialog(
     title: String,
     close: () -> Unit,
     confirm: (String) -> Unit,
-    keyboardOptions: KeyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+    keyboardOptions: KeyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
 ) {
     val (input, setInput) = remember { mutableStateOf("") }
     Dialog(onDismissRequest = { close() }) {
@@ -56,7 +49,7 @@ fun ConfirmInputDialog(
                 modifier = Modifier.padding(16.dp),
                 text = title,
                 color = Color.White,
-                fontSize = TextUnit(20f, TextUnitType.Sp),
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
 

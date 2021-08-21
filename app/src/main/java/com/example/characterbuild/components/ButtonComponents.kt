@@ -1,4 +1,4 @@
-package com.example.characterbuild.activities.components
+package com.example.characterbuild.components
 
 import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -7,10 +7,6 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Filter
-import androidx.compose.material.icons.filled.FilterAlt
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,13 +14,8 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.ExperimentalUnitApi
-import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.TextUnitType
-import androidx.compose.ui.unit.dp
-import com.example.characterbuild.activities.MainActivity
+import androidx.compose.ui.unit.*
 
-@OptIn(ExperimentalUnitApi::class)
 @Composable
 fun FixedButton(
     buttonText: String,
@@ -53,7 +44,7 @@ fun FixedButton(
         Text(
             text = buttonText,
             color = Color.White,
-            fontSize = TextUnit(18F, TextUnitType.Sp),
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
     }

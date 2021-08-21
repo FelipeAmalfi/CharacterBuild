@@ -1,4 +1,4 @@
-package com.example.characterbuild.activities
+package com.example.characterbuild.ui.talents
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,8 +10,6 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.FilterAlt
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
@@ -23,22 +21,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import com.example.characterbuild.R
-import com.example.characterbuild.activities.components.ConfirmInputDialog
-import com.example.characterbuild.activities.components.FixedButton
-import com.example.characterbuild.activities.viewmodel.TalentsViewModel
-import com.example.characterbuild.activities.viewstate.ListState
+import com.example.characterbuild.components.ConfirmInputDialog
+import com.example.characterbuild.components.FixedButton
+import com.example.characterbuild.viewstate.ListState
 import com.example.characterbuild.ui.theme.Indigo
 import com.example.characterbuild.ui.theme.CharacterBuildTheme
 import com.example.characterbuild.ui.theme.Purple700
+import com.example.characterbuild.viewmodel.TalentsViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : ComponentActivity() {
-
+class TalentsActivity : ComponentActivity() {
 
     companion object {
         private const val ADD_BUTTON_TAG = "Add"
     }
 
-    private val talentsViewModel = TalentsViewModel()
+    private val talentsViewModel: TalentsViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -148,7 +146,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
     @Composable
     fun Footer() {
 
@@ -178,7 +175,6 @@ class MainActivity : ComponentActivity() {
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
             )
         }
-
     }
 
     //endregion

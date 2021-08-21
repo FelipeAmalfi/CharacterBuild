@@ -54,22 +54,20 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'androidx.compose.ui:ui:1.1.0-alpha01'
-    // Tooling support (Previews, etc.)
     implementation 'androidx.compose.ui:ui-tooling:1.1.0-alpha01'
-    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
     implementation 'androidx.compose.foundation:foundation:1.1.0-alpha01'
-    // Material Design
     implementation 'androidx.compose.material:material:1.1.0-alpha01'
-    // Material design icons
     implementation 'androidx.compose.material:material-icons-core:1.1.0-alpha01'
     implementation 'androidx.compose.material:material-icons-extended:1.1.0-alpha01'
-    // Integration with activities
     implementation 'androidx.activity:activity-compose:1.3.1'
-    // Integration with ViewModels
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07'
-    // Integration with observables
     implementation 'androidx.compose.runtime:runtime-livedata:1.1.0-alpha01'
     implementation 'androidx.compose.runtime:runtime-rxjava2:1.1.0-alpha01'
+    implementation "io.insert-koin:koin-androidx-scope:$koin_version"
+    implementation "io.insert-koin:koin-androidx-viewmodel:$koin_version"
+    implementation "io.insert-koin:koin-androidx-fragment:$koin_version"
+    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
+    implementation "io.insert-koin:koin-androidx-ext:$koin_version"
 
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.0-alpha01'
