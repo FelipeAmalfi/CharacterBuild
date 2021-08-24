@@ -6,6 +6,5 @@ import com.example.characterbuild.domain.usecases.GetTalentsListUseCaseImpl
 import org.koin.dsl.module
 
 val useCasesModule = module {
-    factory<GetTalentsListUseCase> { GetTalentsListUseCaseImpl() }
-
+    factory<GetTalentsListUseCase> { GetTalentsListUseCaseImpl(repository = get()) }
 }

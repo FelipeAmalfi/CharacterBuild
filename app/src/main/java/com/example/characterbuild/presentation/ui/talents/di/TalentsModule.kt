@@ -8,7 +8,7 @@ import org.koin.dsl.module
 val talentsModule = module{
     viewModel {
         TalentsViewModel(
-            talentsRepository = get()
+            getTalentsListUseCase = get()
         )
     }
 }
