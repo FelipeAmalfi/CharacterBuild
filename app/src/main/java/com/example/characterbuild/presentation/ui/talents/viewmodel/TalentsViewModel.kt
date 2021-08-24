@@ -1,9 +1,9 @@
-package com.example.characterbuild.viewmodel
+package com.example.characterbuild.presentation.ui.talents.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.characterbuild.viewstate.ListState
+import com.example.characterbuild.presentation.ui.talents.viewstate.ListState
 
 class TalentsViewModel: ViewModel() {
 

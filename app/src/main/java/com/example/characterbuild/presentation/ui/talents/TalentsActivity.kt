@@ -1,4 +1,4 @@
-package com.example.characterbuild.ui.talents
+package com.example.characterbuild.presentation.ui.talents
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -21,13 +21,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import com.example.characterbuild.R
-import com.example.characterbuild.components.ConfirmInputDialog
-import com.example.characterbuild.components.FixedButton
-import com.example.characterbuild.viewstate.ListState
-import com.example.characterbuild.ui.theme.Indigo
-import com.example.characterbuild.ui.theme.CharacterBuildTheme
-import com.example.characterbuild.ui.theme.Purple700
-import com.example.characterbuild.viewmodel.TalentsViewModel
+import com.example.characterbuild.presentation.ui.components.ConfirmInputDialog
+import com.example.characterbuild.presentation.ui.components.FixedButton
+import com.example.characterbuild.presentation.ui.talents.viewstate.ListState
+import com.example.characterbuild.presentation.ui.theme.Indigo
+import com.example.characterbuild.presentation.ui.theme.CharacterBuildTheme
+import com.example.characterbuild.presentation.ui.theme.Purple700
+import com.example.characterbuild.presentation.ui.talents.viewmodel.TalentsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TalentsActivity : ComponentActivity() {
@@ -108,7 +108,6 @@ class TalentsActivity : ComponentActivity() {
         }
     }
 
-    @OptIn(ExperimentalUnitApi::class)
     @Composable
     fun Toolbar() {
         var isDialogOpen by remember { mutableStateOf(false) }

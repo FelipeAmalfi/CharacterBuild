@@ -4,6 +4,7 @@ CharacterBuild é um app feito para facilitar a criação de personagens para o 
 
 Arquitetura:
 - MVVM
+- Clean
 
 Features:
 - Lista de características

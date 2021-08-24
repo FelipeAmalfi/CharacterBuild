@@ -1,6 +1,6 @@
-package com.example.characterbuild.di
+package com.example.characterbuild.presentation.ui.talents.di
 
-import com.example.characterbuild.viewmodel.TalentsViewModel
+import com.example.characterbuild.presentation.ui.talents.viewmodel.TalentsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

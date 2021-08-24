@@ -1,4 +1,4 @@
-package com.example.characterbuild.components
+package com.example.characterbuild.presentation.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -24,9 +24,9 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.window.Dialog
 import com.example.characterbuild.R
-import com.example.characterbuild.ui.theme.DarkGrayCustom
-import com.example.characterbuild.ui.theme.GreenConfirm
-import com.example.characterbuild.ui.theme.Indigo
+import com.example.characterbuild.presentation.ui.theme.DarkGrayCustom
+import com.example.characterbuild.presentation.ui.theme.GreenConfirm
+import com.example.characterbuild.presentation.ui.theme.Indigo
 
 @Composable
 fun ConfirmInputDialog(
