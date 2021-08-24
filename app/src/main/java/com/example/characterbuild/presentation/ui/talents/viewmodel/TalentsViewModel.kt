@@ -3,9 +3,16 @@ package com.example.characterbuild.presentation.ui.talents.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.characterbuild.data.repository.TalentsRepository
 import com.example.characterbuild.presentation.ui.talents.viewstate.ListState
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class TalentsViewModel: ViewModel() {
+class TalentsViewModel(
+    val talentsRepository: TalentsRepository
+): ViewModel() {
 
     private val _talentListState =  MutableLiveData<List<String>>()
 
@@ -13,8 +20,18 @@ class TalentsViewModel: ViewModel() {
     val filterState: LiveData<ListState> = _filterState
 
     init {
-        _talentListState.value = defaultList
-        _filterState.value =  ListState.ClearList(defaultList)
+        getInitialData()
+    }
+
+    private fun getInitialData(){
+        CoroutineScope(Dispatchers.Main).launch{
+            val talents = withContext(Dispatchers.Default) {
+                talentsRepository.getTalents()
+            }
+
+            _talentListState.value = talents
+            _filterState.value =  ListState.ClearList(talents)
+        }
     }
 
     fun filter(quantity: Long){
