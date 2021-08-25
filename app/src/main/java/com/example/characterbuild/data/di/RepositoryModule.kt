@@ -5,5 +5,5 @@ import com.example.characterbuild.data.repository.TalentsRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module{
-    factory<TalentsRepository> { TalentsRepositoryImpl(talentsDataSource = get()) }
+    factory<TalentsRepository> { TalentsRepositoryImpl(talentsApi = get()) }
 }

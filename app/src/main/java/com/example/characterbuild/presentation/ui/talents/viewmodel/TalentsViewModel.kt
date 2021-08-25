@@ -3,9 +3,11 @@ package com.example.characterbuild.presentation.ui.talents.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.characterbuild.data.repository.TalentsRepository
 import com.example.characterbuild.domain.usecases.GetTalentsListUseCase
 import com.example.characterbuild.presentation.ui.talents.viewstate.ListState
+import com.example.characterbuild.utils.BaseViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,7 +15,7 @@ import kotlinx.coroutines.withContext
 
 class TalentsViewModel(
     private val getTalentsListUseCase: GetTalentsListUseCase
-): ViewModel() {
+): BaseViewModel() {
 
     private val _talentListState =  MutableLiveData<List<String>>()
 
@@ -25,7 +27,7 @@ class TalentsViewModel(
     }
 
     private fun getInitialData(){
-        CoroutineScope(Dispatchers.Main).launch{
+        viewModelScope.launch {
             val talents = withContext(Dispatchers.Default) {
                 getTalentsListUseCase.execute(Unit)
             }

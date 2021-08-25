@@ -125,6 +125,7 @@ class TalentsActivity : ComponentActivity() {
                 }
             }
         )
+
         if (isDialogOpen) {
             ConfirmInputDialog(
                 title = stringResource(id = R.string.dialog_add_talent),

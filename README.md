@@ -17,5 +17,6 @@ Tecnologias:
 - Koin
 - Jetpack Compose
 - ViewModel
+- Retrofit
 
 
