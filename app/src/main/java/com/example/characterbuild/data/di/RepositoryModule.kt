@@ -1,4 +1,4 @@
-package com.example.characterbuild.data.repository.di
+package com.example.characterbuild.data.di
 
 import com.example.characterbuild.data.repository.TalentsRepository
 import com.example.characterbuild.data.repository.TalentsRepositoryImpl

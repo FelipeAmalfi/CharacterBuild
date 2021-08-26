@@ -35,11 +35,26 @@ fun provideRetrofit(client: OkHttpClient, baseUrl: String): Retrofit {
         .build()
 }
 
-
-fun <T> callback(fn: (Throwable?, Response<T>?) -> Unit): Callback<T> {
-    return object : Callback<T> {
-        override fun onResponse(call: Call<T>, response: Response<T>) = fn(null, response)
-        override fun onFailure(call: Call<T>, t: Throwable) = fn(t, null)
-    }
+fun<T> Call<T>.enqueue(callback: CallBackKt<T>.() -> Unit) {
+    val callBackKt = CallBackKt<T>()
+    callback.invoke(callBackKt)
+    this.enqueue(callBackKt)
 }
+
+class CallBackKt<T>: Callback<T> {
+
+    var onResponse: ((Response<T>) -> Unit)? = null
+    var onFailure: ((t: Throwable?) -> Unit)? = null
+
+    override fun onFailure(call: Call<T>, t: Throwable) {
+        onFailure?.invoke(t)
+    }
+
+    override fun onResponse(call: Call<T>, response: Response<T>) {
+        onResponse?.invoke(response)
+    }
+
+}
+
+
 

@@ -1,4 +1,4 @@
-package com.example.characterbuild.data.datasource.network
+package com.example.characterbuild.data.di
 
 import com.example.characterbuild.data.datasource.TalentsApi
 import org.koin.dsl.module

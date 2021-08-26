@@ -10,12 +10,12 @@ class TalentsRepositoryImpl(
     override suspend fun getTalents(): List<String> {
         val response = talentsApi.getTalents()
 
-        return if(response.isSuccessful){
-            response.body()?.toDomain()!!
-        }else{
+        return if (response.isSuccessful) {
+            response.body()?.toDomain().orEmpty()
+        } else {
             emptyList()
         }
     }
-
-
 }
+
+
