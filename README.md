@@ -1,18 +1,15 @@
 # CharacterBuild
 
-CharacterBuild é um app feito para facilitar a criação de personagens para o RPG de Terras devastadas.
+CharacterBuild is an app that helps creation of Terras Desvastada's RPG characters.
 
-Arquitetura:
-- MVVM
-- Clean
+Using clean architecture, modular architecture and mvvm to create the following features to made easy the character creation
 
 Features:
-- Lista de características
-- Filtar uma quantidade de características aleatórias
-- Adicionar novas características
+- Talents list
+- Filter the list, getting n(chosen by the user) random talents.
+- Add new talents to get the chance to make your character more versatile
 
-
-Tecnologias:
+Technologies:
 - Kotlin
 - Koin
 - Jetpack Compose
