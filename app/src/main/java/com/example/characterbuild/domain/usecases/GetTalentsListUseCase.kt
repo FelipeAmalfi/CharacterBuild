@@ -1,5 +1,5 @@
 package com.example.characterbuild.domain.usecases
 
-import com.example.characterbuild.utils.UseCase
+import com.abstractions.utils.UseCase
 
 interface GetTalentsListUseCase: UseCase<Unit, List<String>>

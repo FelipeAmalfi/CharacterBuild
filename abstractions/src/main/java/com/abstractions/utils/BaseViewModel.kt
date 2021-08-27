@@ -1,4 +1,4 @@
-package com.example.characterbuild.utils
+package com.abstractions.utils
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

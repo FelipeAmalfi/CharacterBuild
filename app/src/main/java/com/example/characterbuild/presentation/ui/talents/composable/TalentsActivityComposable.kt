@@ -7,8 +7,11 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -16,13 +19,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.characterbuild.R
-import com.example.characterbuild.presentation.components.ConfirmInputDialog
-import com.example.characterbuild.presentation.components.FixedButton
 import com.example.characterbuild.presentation.theme.CharacterBuildTheme
-import com.example.characterbuild.presentation.theme.Indigo
-import com.example.characterbuild.presentation.theme.Purple700
 import com.example.characterbuild.presentation.ui.talents.viewmodel.TalentsViewModel
 import com.example.characterbuild.presentation.ui.talents.viewstate.ListState
+import com.example.components.composables.ConfirmInputDialog
+import com.example.components.composables.FixedButton
+import com.example.components.theme.Indigo
+import com.example.components.theme.Purple700
 
 
 @Composable

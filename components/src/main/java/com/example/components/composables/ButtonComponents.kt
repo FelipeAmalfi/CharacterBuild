@@ -1,4 +1,4 @@
-package com.example.characterbuild.presentation.components
+package com.example.components.composables
 
 import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.fillMaxWidth

@@ -1,4 +1,4 @@
-package com.example.characterbuild.presentation.components
+package com.example.components.composables
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -23,10 +23,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.window.Dialog
-import com.example.characterbuild.R
-import com.example.characterbuild.presentation.theme.DarkGrayCustom
-import com.example.characterbuild.presentation.theme.GreenConfirm
-import com.example.characterbuild.presentation.theme.Indigo
+import com.example.components.R
+import com.example.components.theme.DarkGrayCustom
+import com.example.components.theme.GreenConfirm
+import com.example.components.theme.Indigo
 
 @Composable
 fun ConfirmInputDialog(
@@ -74,7 +74,7 @@ fun ConfirmInputDialog(
             )
 
             FixedButton(
-                buttonText = stringResource(R.string.action_button_dialog_confirm),
+                buttonText = stringResource(R.string.fixed_button_confirm),
                 buttonColor = GreenConfirm,
                 buttonShape = RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp),
                 buttonIcon = Icons.Filled.Check,
